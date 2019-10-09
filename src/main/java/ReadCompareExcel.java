@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-//import java.util.HashMap;
 import java.util.Iterator;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -12,14 +11,11 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 
 public class ReadCompareExcel {
     static Boolean check = false;
 
-    //Change column number whatever you want to take data
     public static int columnNumForFirst = 1;
     public static int columnNumForSecond = 0;
 
@@ -27,9 +23,9 @@ public class ReadCompareExcel {
 
         try {
 
-            ArrayList arr1 = new ArrayList();
-            ArrayList arr2 = new ArrayList();
-            ArrayList arr3 = new ArrayList();
+            ArrayList array1 = new ArrayList();
+            ArrayList array2 = new ArrayList();
+            ArrayList array3 = new ArrayList();
 
             FileInputStream file1 = new FileInputStream(new File(
                     "D:\\Excel.xls"));
@@ -69,10 +65,10 @@ public class ReadCompareExcel {
 
                             switch (cell.getCellType()) {
                                 case NUMERIC:
-                                    arr1.add(cell.getNumericCellValue());
+                                    array1.add(cell.getNumericCellValue());
                                     break;
                                 case STRING:
-                                    arr1.add(cell.getStringCellValue());
+                                    array1.add(cell.getStringCellValue());
                                     break;
                             }
                     }
@@ -107,10 +103,10 @@ public class ReadCompareExcel {
 
                             switch (cell1.getCellType()) {
                                 case NUMERIC:
-                                    arr2.add(cell1.getNumericCellValue());
+                                    array2.add(cell1.getNumericCellValue());
                                     break;
                                 case STRING:
-                                    arr2.add(cell1.getStringCellValue());
+                                    array2.add(cell1.getStringCellValue());
                                     break;
                             }
                     }
@@ -122,13 +118,13 @@ public class ReadCompareExcel {
 
 
             // compare two arrays
-            for (Object process : arr1) {
-                if (!arr2.contains(process)) {
-                    arr3.add(process);
+            for (Object process : array1) {
+                if (!array2.contains(process)) {
+                    array3.add(process);
                 }
             }
-            System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + arr3);
-            writeResultDataToExcel(arr3);
+            System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + array3);
+            writeResultDataToExcel(array3);
 
 
             System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
@@ -138,7 +134,7 @@ public class ReadCompareExcel {
             while (rowIterator3.hasNext()) {
                 Row row = rowIterator3.next();
 
-                for (Object matric : arr3) {
+                for (Object matric : array3) {
 
                     if (row.getCell(1).toString().equals(matric)) {
 
@@ -166,7 +162,7 @@ public class ReadCompareExcel {
 
     // write into new file excel
 
-    private static void writeResultDataToExcel(ArrayList arr3) {
+    private static void writeResultDataToExcel(ArrayList array3) {
 
         FileOutputStream resultExcel = null;
         try {
@@ -177,13 +173,12 @@ public class ReadCompareExcel {
             HSSFSheet spreadSheet = workBook.createSheet("List of students who have not submitted the GitHub account.");
             HSSFRow row;
             HSSFCell cell;
-            // System.out.println("array size is :: "+minusArray.size());
 
             int cellnumber = 0;
-            for (int i1 = 0; i1 < arr3.size(); i1++) {
+            for (int i1 = 0; i1 < array3.size(); i1++) {
                 row = spreadSheet.createRow(i1);
                 cell = row.createCell(cellnumber);
-                cell.setCellValue(arr3.get(i1).toString().trim());
+                cell.setCellValue(array3.get(i1).toString().trim());
             }
 
             workBook.write(resultExcel);
