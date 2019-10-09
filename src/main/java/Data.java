@@ -12,7 +12,6 @@ public class Data {
 
     public Data(String column1, String column2, String column3) {
         super();
-       // this.num = num;
         this.column1 = column1;
         this.column2 = column2;
         this.column3 = column3;
