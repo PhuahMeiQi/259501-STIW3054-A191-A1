@@ -16,9 +16,9 @@ public class saveToExcel {
 
             //Create Heading
             Row rowHeading = sheet.createRow(0);
-            rowHeading.createCell(0).setCellValue("  No");
-            rowHeading.createCell(1).setCellValue("         Matric        ");
-            rowHeading.createCell(2).setCellValue("         Name        ");
+            rowHeading.createCell(0).setCellValue("No");
+            rowHeading.createCell(1).setCellValue("Matric");
+            rowHeading.createCell(2).setCellValue("Name");
 
             //1st Row Font Size
             for (int i = 0; i <= 2; i++) {

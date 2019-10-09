@@ -50,8 +50,10 @@ public class ReadCompareExcel {
             Iterator<Row> rowIterator1 = sheet1.iterator();
             Iterator<Row> rowIterator2 = sheet2.iterator();
             Iterator<Row> rowIterator3 = sheet1.iterator();
+            Iterator<Row> rowIterator4 = sheet1.iterator();
 
             //getting date from first excel file
+            //System.out.format("| %-10s| %-20s| %-40s|\n","No","Matric","Name");
             while (rowIterator1.hasNext()) {
                 Row row = rowIterator1.next();
                 // For each row, iterate through all the columns
@@ -144,11 +146,12 @@ public class ReadCompareExcel {
 
                         a++;
 
-                        System.out.format("| %-10s| %-20s| %-40s|\n",a,row.getCell(1),row.getCell(2),row.getCell(3));
+                        System.out.format("| %-10s| %-20s| %-40s| %-20s\n",a,row.getCell(1),row.getCell(2),row.getCell(3));
 
                     }
                 }
             }
+
 
 
             // closing the files
