@@ -14,26 +14,20 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 public class ReadCompareExcel {
-    static Boolean check = false;
-
     public static int columnNumForFirst = 1;
     public static int columnNumForSecond = 0;
 
     public static void main(String args[]) throws IOException {
-
         try {
-
             ArrayList array1 = new ArrayList();
             ArrayList array2 = new ArrayList();
             ArrayList array3 = new ArrayList();
 
-            FileInputStream file1 = new FileInputStream(new File(
-                    "D:\\Excel.xls"));
+            FileInputStream file1 = new FileInputStream(new File("D:\\Excel.xls"));
 
-            FileInputStream file2 = new FileInputStream(new File(
-                    "D:\\Excelsnd.xls"));
+            FileInputStream file2 = new FileInputStream(new File("D:\\Excelsnd.xls"));
 
-            // Get the workbook instance for XLSX file
+            // Get the workbook instance for XLS file
             HSSFWorkbook workbook1 = new HSSFWorkbook(file1);
             HSSFWorkbook workbook2 = new HSSFWorkbook(file2);
 
@@ -46,17 +40,14 @@ public class ReadCompareExcel {
             Iterator<Row> rowIterator1 = sheet1.iterator();
             Iterator<Row> rowIterator2 = sheet2.iterator();
             Iterator<Row> rowIterator3 = sheet1.iterator();
-            Iterator<Row> rowIterator4 = sheet1.iterator();
 
             //getting date from first excel file
-            //System.out.format("| %-10s| %-20s| %-40s|\n","No","Matric","Name");
             while (rowIterator1.hasNext()) {
                 Row row = rowIterator1.next();
                 // For each row, iterate through all the columns
                 Iterator<Cell> cellIterator = row.cellIterator();
 
                 while (cellIterator.hasNext()) {
-
                     Cell cell = cellIterator.next();
                     // This is for read only one column from excel
 
@@ -72,13 +63,8 @@ public class ReadCompareExcel {
                                     break;
                             }
                     }
-
                     System.out.print("\t"+cell);
-
-
-
                 }
-
                 System.out.println(" ");
             }
 
@@ -86,16 +72,15 @@ public class ReadCompareExcel {
             System.out.println("\n\n\n\n\n\n");
             System.out.println("Students who have submitted the GitHub account: ");
             System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-            // For retrive the second excel data
 
+            // For retrive the second excel data
             while (rowIterator2.hasNext()) {
                 Row row1 = rowIterator2.next();
 
                 // For each row, iterate through all the columns
                 Iterator<Cell> cellIterator1 = row1.cellIterator();
                 while (cellIterator1.hasNext()) {
-
-                        Cell cell1 = cellIterator1.next();
+                    Cell cell1 = cellIterator1.next();
                     // Check the cell type and format accordingly
 
                     // This is for read only one column from excel
@@ -110,12 +95,10 @@ public class ReadCompareExcel {
                                     break;
                             }
                     }
-
                     System.out.print(cell1+"\t\t\t\t\t\t\t");
                 }
                 System.out.println();
             }
-
 
             // compare two arrays
             for (Object process : array1) {
@@ -126,20 +109,13 @@ public class ReadCompareExcel {
             System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + array3);
             writeResultDataToExcel(array3);
 
-
             System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
-
             int a = 0;
-
             while (rowIterator3.hasNext()) {
                 Row row = rowIterator3.next();
-
                 for (Object matric : array3) {
-
                     if (row.getCell(1).toString().equals(matric)) {
-
                         a++;
-
                         System.out.format("| %-10s| %-20s| %-40s\n",a,row.getCell(1),row.getCell(2));
                     }
                 }
@@ -161,7 +137,6 @@ public class ReadCompareExcel {
     }
 
     // write into new file excel
-
     private static void writeResultDataToExcel(ArrayList array3) {
 
         FileOutputStream resultExcel = null;
@@ -180,15 +155,11 @@ public class ReadCompareExcel {
                 cell = row.createCell(cellnumber);
                 cell.setCellValue(array3.get(i1).toString().trim());
             }
-
             workBook.write(resultExcel);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
