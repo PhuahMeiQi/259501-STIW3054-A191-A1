@@ -15,20 +15,13 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
-//import org.apache.poi.xssf.usermodel.XSSFCell;
-//import org.apache.poi.xssf.usermodel.XSSFRow;
-//import org.apache.poi.xssf.usermodel.XSSFSheet;
-//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadCompareExcel {
     static Boolean check = false;
 
     //Change column number whatever you want to take data
     public static int columnNumForFirst = 1;
-    public static int columnNumForFirst1 = 2;
     public static int columnNumForSecond = 0;
-    public static int columnNumForSecond2 = 1;
-    public static int columnNumForSecond3 = 2;
 
     public static void main(String args[]) throws IOException {
 
@@ -152,7 +145,7 @@ public class ReadCompareExcel {
             //StoreArraysToHashMap(arr1, arr2);
 
 
-            System.out.format("| %-10s| %-20s| %-40s| %-20s|\n","No","Matric","Name","Link");
+            System.out.format("| %-10s| %-20s| %-40s| %-20s\n","No","Matric","Name","Link");
 
             int a = 0;
 
