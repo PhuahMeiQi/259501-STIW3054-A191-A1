@@ -131,7 +131,7 @@ public class ReadCompareExcel {
             writeResultDataToExcel(arr3);
 
 
-            System.out.format("| %-10s| %-20s| %-40s| %-20s\n","No","Matric","Name","Link");
+            System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
 
             int a = 0;
 
@@ -144,7 +144,7 @@ public class ReadCompareExcel {
 
                         a++;
 
-                        System.out.format("| %-10s| %-20s| %-40s| %-20s\n",a,row.getCell(1),row.getCell(2),row.getCell(3));
+                        System.out.format("| %-10s| %-20s| %-40s\n",a,row.getCell(1),row.getCell(2));
                     }
                 }
             }
