@@ -60,10 +60,6 @@ public class ReadCompareExcel {
                 while (cellIterator.hasNext()) {
 
                     Cell cell = cellIterator.next();
-                   // CellStyle cellStyle1 = workbook1.createCellStyle();
-                   // cellStyle1.setWrapText(true);
-                   // cellStyle1.setAlignment(CellStyle.ALIGN_JUSTIFY);
-                    //System.out.print("\t"+"|"+"\t");
                     // This is for read only one column from excel
 
                     if (cell.getColumnIndex() == columnNumForFirst) {
@@ -71,16 +67,13 @@ public class ReadCompareExcel {
 
                             switch (cell.getCellType()) {
                                 case NUMERIC:
-                                    //System.out.print(cell.getNumericCellValue());
                                     arr1.add(cell.getNumericCellValue());
                                     break;
                                 case STRING:
                                     arr1.add(cell.getStringCellValue());
-                                    // System.out.print(cell.getStringCellValue());
                                     break;
                             }
                     }
-
 
                     System.out.print("\t"+cell);
 
@@ -94,7 +87,7 @@ public class ReadCompareExcel {
             file1.close();
             System.out.println("\n\n\n\n\n\n");
             System.out.println("Students who have submitted the GitHub account: ");
-            System.out.println("\n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             // For retrive the second excel data
             while (rowIterator2.hasNext()) {
                 Row row1 = rowIterator2.next();
@@ -113,15 +106,9 @@ public class ReadCompareExcel {
                             switch (cell1.getCellType()) {
                                 case NUMERIC:
                                     arr2.add(cell1.getNumericCellValue());
-                                    //System.out.print(cell1.getNumericCellValue());
-                                    //System.out.print("\t"+" "+"\t\t");
-                                    //System.out.print("\t");
                                     break;
                                 case STRING:
                                     arr2.add(cell1.getStringCellValue());
-                                    //System.out.print(cell1.getStringCellValue());
-                                    //System.out.print("\t"+" "+"\t\t");
-                                    //System.out.print("\t");
                                     break;
                             }
                     }
@@ -142,7 +129,6 @@ public class ReadCompareExcel {
             }
             System.out.println("\nStudents who have not submitted the GitHub account: " + arr3);
             writeResultDataToExcel(arr3);
-            //StoreArraysToHashMap(arr1, arr2);
 
 
             System.out.format("| %-10s| %-20s| %-40s| %-20s\n","No","Matric","Name","Link");
@@ -198,14 +184,6 @@ public class ReadCompareExcel {
                 cell = row.createCell(cellnumber);
                 cell.setCellValue(arr3.get(i1).toString().trim());
             }
-
-           /* int cellnumber2 = 1;
-            for (int i2 = 0; i2 < arr3.size(); i2++) {
-                row = spreadSheet.createRow(i2);
-                cell = row.createCell(cellnumber);
-                // System.out.print(cell.getCellStyle());
-                cell.setCellValue(arr3.get(i2).toString().trim());
-            }*/
 
             workBook.write(resultExcel);
         } catch (FileNotFoundException e) {
