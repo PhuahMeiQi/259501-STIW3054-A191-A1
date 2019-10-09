@@ -107,7 +107,7 @@ public class ReadCompareExcel {
                 }
             }
             System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + array3);
-            writeResultDataToExcel(array3);
+            //writeResultDataToExcel(array3);
 
             System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
             int a = 0;
@@ -134,32 +134,5 @@ public class ReadCompareExcel {
             e.printStackTrace();
         }
 
-    }
-
-    // write into new file excel
-    private static void writeResultDataToExcel(ArrayList array3) {
-
-        FileOutputStream resultExcel = null;
-        try {
-            resultExcel = new FileOutputStream(
-                    "D:\\ResultFile.xls");
-
-            HSSFWorkbook workBook = new HSSFWorkbook();
-            HSSFSheet spreadSheet = workBook.createSheet("List of students who have not submitted the GitHub account.");
-            HSSFRow row;
-            HSSFCell cell;
-
-            int cellnumber = 0;
-            for (int i1 = 0; i1 < array3.size(); i1++) {
-                row = spreadSheet.createRow(i1);
-                cell = row.createCell(cellnumber);
-                cell.setCellValue(array3.get(i1).toString().trim());
-            }
-            workBook.write(resultExcel);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
