@@ -18,14 +18,6 @@ public class Data {
         this.column3 = column3;
     }
 
-    ////public int getNum() {
-       // return num;
-   // }
-
-   // public void setNum(int num) {
-        //this.num = num;
-   // }
-
     public String getColumn1() {
         return column1;
     }
