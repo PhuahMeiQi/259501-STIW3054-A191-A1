@@ -115,14 +115,11 @@ public class ReadCompareExcel {
                             }
                     }
 
-                    System.out.print(cell1+"\t");
+                    System.out.print(cell1+"\t\t\t\t\t\t\t");
                 }
                 System.out.println();
             }
 
-
-            System.out.println("\nList of Student: " + 1*(arr1.size()-1));
-            System.out.println("Students who have submitted: " + 1*(arr2.size()-1));
 
             // compare two arrays
             for (Object process : arr1) {
@@ -130,7 +127,7 @@ public class ReadCompareExcel {
                     arr3.add(process);
                 }
             }
-            System.out.println("\nStudents who have not submitted the GitHub account: " + arr3);
+            System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + arr3);
             writeResultDataToExcel(arr3);
 
 
@@ -148,10 +145,10 @@ public class ReadCompareExcel {
                         a++;
 
                         System.out.format("| %-10s| %-20s| %-40s| %-20s\n",a,row.getCell(1),row.getCell(2),row.getCell(3));
-
                     }
                 }
             }
+            System.out.println("\nNor Aida Binti Amuruddin has wrote the wrong matric number");
 
 
 
