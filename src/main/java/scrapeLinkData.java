@@ -1,10 +1,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import sun.awt.image.ImageWatched;
 
-import javax.lang.model.element.Name;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -22,11 +19,9 @@ public class scrapeLinkData {
             ArrayList<Data> result = new ArrayList<Data>();
 
             Elements linkdata = doc.select("table").select("tr");
-
             for (int i = 1;i<linkdata.size();i++ ) {
                 Elements linkindata=linkdata.get(i).select("p");
-                for (int j=0;j<linkindata.size();j++)
-                {
+                for (int j=0;j<linkindata.size();j++) {
                     String matchMatricResult = null;
 
                     Pattern matric = Pattern.compile("([0-9]{6})");
@@ -72,15 +67,11 @@ public class scrapeLinkData {
 
                     result.add(new Data(matchMatricResult, matchNameResult,matchLink.group()));
                 }
-
-
             }
             return result;
 
         }catch (Exception e){
             return null;
         }
-
     }
-
 }
