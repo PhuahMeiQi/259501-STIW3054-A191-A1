@@ -91,12 +91,12 @@ public class ReadCompareExcel {
             System.out.println("Students who have submitted the GitHub account: ");
             System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             // For retrive the second excel data
+
             while (rowIterator2.hasNext()) {
                 Row row1 = rowIterator2.next();
 
                 // For each row, iterate through all the columns
                 Iterator<Cell> cellIterator1 = row1.cellIterator();
-
                 while (cellIterator1.hasNext()) {
 
                         Cell cell1 = cellIterator1.next();
@@ -114,6 +114,7 @@ public class ReadCompareExcel {
                                     break;
                             }
                     }
+
                     System.out.print(cell1+"\t");
                 }
                 System.out.println();
