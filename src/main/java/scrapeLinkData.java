@@ -79,6 +79,7 @@ public class scrapeLinkData {
                     result.add(new Data(matchMatricResult, matchNameResult,matchLink.group()));
                 }
             }
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
             return result;
 
         }catch (Exception e){
