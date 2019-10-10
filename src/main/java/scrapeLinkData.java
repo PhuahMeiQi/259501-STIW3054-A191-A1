@@ -15,8 +15,9 @@ public class scrapeLinkData {
             Document doc = Jsoup.connect(URL).get();
             String tittle = doc.title();
             System.out.printf("%66s", tittle + "\n");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
             System.out.printf("| %-5s| %-17s| %-50s| %-70s\n","No","Matric","Name","Link");
-            System.out.println("-----------------------------------------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
             ArrayList<Data> result = new ArrayList<Data>();
 
             Elements linkdata = doc.select("table").select("tr");
@@ -55,16 +56,16 @@ public class scrapeLinkData {
                     String matchNameResult = null;
 
                     if (matchName.find()){
-                        System.out.printf("| %-50s", matchName.group(2));
+                        System.out.printf("| %-50s", matchName.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
 
                     }else if (matchName2.find()){
-                        System.out.printf("| %-50s", matchName2.group(2));
+                        System.out.printf("| %-50s", matchName2.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName2.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
                     }else if (matchName3.find()){
-                        System.out.printf("| %-50s", matchName3.group(2));
+                        System.out.printf("| %-50s", matchName3.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName3.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
                     }
