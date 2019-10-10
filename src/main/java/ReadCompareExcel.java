@@ -95,7 +95,8 @@ public class ReadCompareExcel {
                                     break;
                             }
                     }
-                    System.out.print(cell1+"\t\t\t\t\t\t\t");
+                    System.out.printf("| %-17s",cell1);
+                    //System.out.print(cell1+"\t\t\t\t\t\t\t");
                 }
                 System.out.println();
             }
