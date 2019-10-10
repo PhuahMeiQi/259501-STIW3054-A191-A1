@@ -12,7 +12,9 @@ public class scrapeWikiData {
             Document doc = Jsoup.connect(URL).get();
             String tittle = doc.title();
             System.out.printf("%66s", tittle + "\n");
-            System.out.println("-----------------------------------------------------------------------------------------");
+            System.out.println("-----------------------------------------------------------");
+            System.out.printf("| %-5s| %-17s| %-20s\n","No","Matric","Name");
+            System.out.println("-----------------------------------------------------------");
             ArrayList<Data> result = new ArrayList<Data>();
 
             for (int i = 1; i <= 35; i++) {
@@ -20,11 +22,11 @@ public class scrapeWikiData {
                 Elements Matric = doc.select("#wiki-body > div > table > tbody > tr:nth-child(" + i + ") > td:nth-child(2)");
                 Elements Name = doc.select("#wiki-body > div > table > tbody > tr:nth-child(" + i + ") > td:nth-child(3)");
 
-                System.out.printf("%1s", No.text());
+                System.out.printf("| %1s", No.text());
                 System.out.print("    ");
-                System.out.printf("%5s", Matric.text());
+                System.out.printf("| %5s", Matric.text());
                 System.out.print("    ");
-                System.out.printf("%5s", Name.text() + "\n");
+                System.out.printf("| %5s", Name.text() + "\n");
 
                 result.add(new Data(No.text(), Matric.text(), Name.text()));
             }
