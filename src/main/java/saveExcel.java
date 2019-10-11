@@ -37,13 +37,13 @@ public class saveExcel {
             for (DataSnd data : scrapeLinkData.findAll()) {
                 //Create row
                 Row row = sheet.createRow(r);
-                //Column 1: Number
+                //Column 1: Matric
                 Cell cellId = row.createCell(0);
                 cellId.setCellValue(data.getColumn1());
-                //Column 2 : TR Data
+                //Column 2 : Name
                 Cell cellColumn1 = row.createCell(1);
                 cellColumn1.setCellValue(data.getColumn2());
-                //Column 3 : TR Data
+                //Column 3 : Link
                 Cell cellColumn2 = row.createCell(2);
                 cellColumn2.setCellValue(data.getColumn3());
                 r++;

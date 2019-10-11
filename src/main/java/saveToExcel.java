@@ -40,10 +40,10 @@ public class saveToExcel {
                 //Column 1: Number
                 Cell cellId = row.createCell(0);
                 cellId.setCellValue(data.getColumn1());
-                //Column 2 : TR Data
+                //Column 2 : Matric
                 Cell cellColumn1 = row.createCell(1);
                 cellColumn1.setCellValue(data.getColumn2());
-                //Column 3 : TR Data
+                //Column 3 : Name
                 Cell cellColumn2 = row.createCell(2);
                 cellColumn2.setCellValue(data.getColumn3());
                 r++;
