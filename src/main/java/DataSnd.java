@@ -1,15 +1,14 @@
 import  java.util.*;
 
-public class Data {
-
+public class DataSnd {
     private String column1, column2,column3;
 
-    public Data()
+    public DataSnd()
     {
         super();
     }
 
-    public Data(String column1, String column2, String column3) {
+    public DataSnd(String column1, String column2, String column3) {
         super();
         this.column1 = column1;
         this.column2 = column2;
@@ -34,9 +33,9 @@ public class Data {
 
     public String getColumn3() {
         return column3;
-   }
+    }
 
-   public void setColumn3(String column3) {
+    public void setColumn3(String column3) {
         this.column3 = column3;
     }
 }

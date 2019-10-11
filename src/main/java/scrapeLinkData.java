@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class scrapeLinkData {
-    public List<Data> findAll(){
+    public List<DataSnd> findAll(){
         try {
             System.out.println("");
             String URL = "https://github.com/STIW3054-A191/Main-Issues/issues/1";
@@ -18,7 +18,7 @@ public class scrapeLinkData {
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
             System.out.printf("| %-5s| %-20s| %-60s| %-80s\n","No","Matric","Name","Link");
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
-            ArrayList<Data> result = new ArrayList<Data>();
+            ArrayList<DataSnd> result = new ArrayList<DataSnd>();
 
             Elements linkdata = doc.select("table>tbody>tr>td");
             for (int i = 1;i<linkdata.size();i++ ) {
@@ -76,7 +76,7 @@ public class scrapeLinkData {
                         System.out.printf("| %-80s\n",matchLink.group());
                     }
 
-                    result.add(new Data(matchMatricResult, matchNameResult,matchLink.group()));
+                    result.add(new DataSnd(matchMatricResult, matchNameResult,matchLink.group()));
                 }
             }
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------");

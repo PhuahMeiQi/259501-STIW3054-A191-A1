@@ -34,7 +34,7 @@ public class saveExcel {
 
 
             int r = 1;
-            for (Data data : scrapeLinkData.findAll()) {
+            for (DataSnd data : scrapeLinkData.findAll()) {
                 //Create row
                 Row row = sheet.createRow(r);
                 //Column 1: Number

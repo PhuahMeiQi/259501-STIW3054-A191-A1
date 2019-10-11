@@ -14,8 +14,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 public class CompareTwoExcel {
-    public static int columnNumForFirst = 1;
-    public static int columnNumForSecond = 0;
+    public static int firstColumnNum = 1;
+    public static int secondColumnNum = 0;
 
     public static void main(String args[]) throws IOException {
         try {
@@ -51,7 +51,7 @@ public class CompareTwoExcel {
                     Cell cell = cellIterator.next();
                     // This is for read only one column from excel
 
-                    if (cell.getColumnIndex() == columnNumForFirst) {
+                    if (cell.getColumnIndex() == firstColumnNum) {
                         // Check the cell type and format accordingly
 
                             switch (cell.getCellType()) {
@@ -84,7 +84,7 @@ public class CompareTwoExcel {
                     // Check the cell type and format accordingly
 
                     // This is for read only one column from excel
-                    if (cell1.getColumnIndex() == columnNumForSecond) {
+                    if (cell1.getColumnIndex() == secondColumnNum) {
 
                             switch (cell1.getCellType()) {
                                 case NUMERIC:
