@@ -13,7 +13,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-public class ReadCompareExcel {
+public class CompareTwoExcel {
     public static int columnNumForFirst = 1;
     public static int columnNumForSecond = 0;
 
