@@ -12,9 +12,9 @@ public class scrapeWikiData {
             Document doc = Jsoup.connect(URL).get();
             String tittle = doc.title();
             System.out.printf("%66s", tittle + "\n");
-            System.out.println("-----------------------------------------------------------");
-            System.out.printf("| %-5s| %-17s| %-20s\n","No","Matric","Name");
-            System.out.println("-----------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------");
+            System.out.printf("| %-5s| %-10s| %-10s\n","No","Matric","Name");
+            System.out.println("----------------------------------------------------------------");
             ArrayList<Data> result = new ArrayList<Data>();
 
             for (int i = 1; i <= 35; i++) {
@@ -30,6 +30,7 @@ public class scrapeWikiData {
 
                 result.add(new Data(No.text(), Matric.text(), Name.text()));
             }
+            System.out.println("----------------------------------------------------------------");
             return result;
 
         }catch (Exception e){

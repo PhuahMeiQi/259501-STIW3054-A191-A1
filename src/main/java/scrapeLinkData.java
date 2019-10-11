@@ -15,12 +15,12 @@ public class scrapeLinkData {
             Document doc = Jsoup.connect(URL).get();
             String tittle = doc.title();
             System.out.printf("%66s", tittle + "\n");
-            System.out.println("----------------------------------------------------------------------------------------------------------------------");
-            System.out.printf("| %-5s| %-17s| %-50s| %-70s\n","No","Matric","Name","Link");
-            System.out.println("----------------------------------------------------------------------------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("| %-5s| %-20s| %-60s| %-80s\n","No","Matric","Name","Link");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
             ArrayList<Data> result = new ArrayList<Data>();
 
-            Elements linkdata = doc.select("table").select("tr");
+            Elements linkdata = doc.select("table>tbody>tr>td");
             for (int i = 1;i<linkdata.size();i++ ) {
                 Elements linkindata=linkdata.get(i).select("p");
                 for (int j=0;j<linkindata.size();j++) {
@@ -32,11 +32,11 @@ public class scrapeLinkData {
                     Matcher matchMatric1 = matric1.matcher(linkindata.get(j).text());
                     if (matchMatric.find()){
                         System.out.printf("| %-5s",i);
-                        System.out.printf("| %-17s",matchMatric.group());
+                        System.out.printf("| %-20s",matchMatric.group());
                         matchMatricResult = matchMatric.group();
                     }else if(matchMatric1.find()){
                         System.out.printf("| %-5s",i);
-                        System.out.printf("| %-17s",matchMatric1.group());
+                        System.out.printf("| %-20s",matchMatric1.group());
 
                         matchMatricResult = matchMatric1.group();
                     }
@@ -56,16 +56,16 @@ public class scrapeLinkData {
                     String matchNameResult = null;
 
                     if (matchName.find()){
-                        System.out.printf("| %-50s", matchName.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
+                        System.out.printf("| %-60s", matchName.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
 
                     }else if (matchName2.find()){
-                        System.out.printf("| %-50s", matchName2.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
+                        System.out.printf("| %-60s", matchName2.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName2.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
                     }else if (matchName3.find()){
-                        System.out.printf("| %-50s", matchName3.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
+                        System.out.printf("| %-60s", matchName3.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":",""));
                         matchNameResult = matchName3.group(2).replaceFirst(" ","").replaceFirst(" : ","").replaceAll(": ","").replaceAll(":","");
 
                     }
@@ -73,13 +73,13 @@ public class scrapeLinkData {
                     Pattern link = Pattern.compile("https://.*");
                     Matcher matchLink = link.matcher(linkindata.get(j).text());
                     if(matchLink.find()){
-                        System.out.printf("| %-70s\n",matchLink.group());
+                        System.out.printf("| %-80s\n",matchLink.group());
                     }
 
                     result.add(new Data(matchMatricResult, matchNameResult,matchLink.group()));
                 }
             }
-            System.out.println("----------------------------------------------------------------------------------------------------------------------");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
             return result;
 
         }catch (Exception e){
