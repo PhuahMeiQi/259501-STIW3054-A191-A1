@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="410.0">App</node>
+    <node x="215.0" y="0.0">DataSnd</node>
+    <node x="374.0" y="410.0">saveToExcel</node>
+    <node x="187.0" y="410.0">AppSnd</node>
+    <node x="0.0" y="0.0">Data</node>
+    <node x="421.0" y="271.0">scrapeWikiData</node>
+    <node x="208.0" y="271.0">scrapeLinkData</node>
+    <node x="0.0" y="504.0">saveExcel</node>
+    <node x="0.0" y="271.0">CompareTwoExcel</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="148.0" y="276.0" />
+  <SelectedNodes>
+    <node>CompareTwoExcel</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
