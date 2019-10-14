@@ -39,7 +39,7 @@ public class scrapeLinkData {
                         System.out.printf("| %-20s",matchMatric1.group());
 
                         matchMatricResult = matchMatric1.group();
-                    }
+                    }//
                     else {
                         matchMatricResult= "";
                     }
