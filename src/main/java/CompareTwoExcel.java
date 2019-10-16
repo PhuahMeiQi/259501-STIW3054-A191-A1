@@ -22,6 +22,7 @@ public class CompareTwoExcel {
             ArrayList array1 = new ArrayList();
             ArrayList array2 = new ArrayList();
             ArrayList array3 = new ArrayList();
+            ArrayList array4 = new ArrayList();
 
             FileInputStream file1 = new FileInputStream(new File("D:\\Excel.xls"));
 
@@ -40,6 +41,7 @@ public class CompareTwoExcel {
             Iterator<Row> rowIterator1 = sheet1.iterator();
             Iterator<Row> rowIterator2 = sheet2.iterator();
             Iterator<Row> rowIterator3 = sheet1.iterator();
+            Iterator<Row> rowIterator4 = sheet2.iterator();
 
             //getting date from first excel file
             while (rowIterator1.hasNext()) {
@@ -107,7 +109,14 @@ public class CompareTwoExcel {
                     array3.add(process);
                 }
             }
+
+            for (Object process : array2) {
+                if (!array1.contains(process)) {
+                    array4.add(process);
+                }
+            }
             System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + array3);
+
             //writeResultDataToExcel(array3);
 
             System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
@@ -121,6 +130,22 @@ public class CompareTwoExcel {
                     }
                 }
             }
+
+
+            System.out.println("\n\nUnknow List: " + array4);
+
+            System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name","Link");
+            int b = 0;
+            while (rowIterator4.hasNext()) {
+                Row row = rowIterator4.next();
+                for (Object matric : array4) {
+                    if (row.getCell(0).toString().equals(matric)) {
+                        b++;
+                        System.out.format("| %-10s| %-20s| %-40s\n",b,row.getCell(0),row.getCell(1),row.getCell(2));
+                    }
+                }
+            }
+
             System.out.println("\nNor Aida Binti Amuruddin has wrote the wrong matric number");
 
 
