@@ -98,7 +98,6 @@ public class CompareTwoExcel {
                             }
                     }
                     System.out.printf("| %-17s",cell1);
-                    //System.out.print(cell1+"\t\t\t\t\t\t\t");
                 }
                 System.out.println();
             }
@@ -117,7 +116,6 @@ public class CompareTwoExcel {
             }
             System.out.println("\n\n\n\n\n\n\nStudents who have not submitted the GitHub account: " + array3);
 
-            //writeResultDataToExcel(array3);
 
             System.out.format("| %-10s| %-20s| %-40s\n","No","Matric","Name");
             int a = 0;
