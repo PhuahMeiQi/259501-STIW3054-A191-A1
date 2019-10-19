@@ -12,7 +12,7 @@ public class saveExcel {
 
             scrapeLinkData scrapeLinkData = new scrapeLinkData();
             HSSFWorkbook workbook = new HSSFWorkbook();
-            HSSFSheet sheet = workbook.createSheet("List_of_Student");
+            HSSFSheet sheet = workbook.createSheet("Github_Issue_Link");
 
             //Create Heading
             Row rowHeading = sheet.createRow(0);
