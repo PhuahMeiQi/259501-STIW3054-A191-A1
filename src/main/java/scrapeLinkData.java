@@ -26,6 +26,7 @@ public class scrapeLinkData {
                 for (int j=0;j<linkindata.size();j++) {
                     String matchMatricResult = null;
 
+                    //Matric No
                     Pattern matric = Pattern.compile("([0-9]{6})");
                     Matcher matchMatric = matric.matcher(linkindata.get(j).text());
                     Pattern matric1 = Pattern.compile("([0-9]{5})");
@@ -39,11 +40,12 @@ public class scrapeLinkData {
                         System.out.printf("| %-20s",matchMatric1.group());
 
                         matchMatricResult = matchMatric1.group();
-                    }////
+                    }
                     else {
                         matchMatricResult= "";
                     }
 
+                    //Name
                     Pattern name=Pattern.compile("(Name)(.*)(Matric)");
                     Matcher matchName = name.matcher(linkindata.get(j).text());
 
@@ -70,6 +72,7 @@ public class scrapeLinkData {
 
                     }
 
+                    //Link
                     Pattern link = Pattern.compile("https://.*");
                     Matcher matchLink = link.matcher(linkindata.get(j).text());
                     if(matchLink.find()){
