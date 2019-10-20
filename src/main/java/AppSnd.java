@@ -1,5 +1,5 @@
 public class AppSnd {
-    public static void main(String[] args) {
+    public void appsnd() {
         try{
             saveExcel save1 = new saveExcel();
             save1.saveData();

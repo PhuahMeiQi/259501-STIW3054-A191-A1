@@ -17,7 +17,7 @@ public class CompareTwoExcel {
     public static int firstColumnNum = 1;
     public static int secondColumnNum = 0;
 
-    public static void main(String args[]) throws IOException {
+    public void comparetwoexcel() {
         try {
             ArrayList array1 = new ArrayList();
             ArrayList array2 = new ArrayList();

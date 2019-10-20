@@ -3,21 +3,68 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="410.0">App</node>
-    <node x="217.0" y="0.0">DataSnd</node>
-    <node x="376.0" y="410.0">saveToExcel</node>
-    <node x="188.0" y="410.0">AppSnd</node>
-    <node x="0.0" y="0.0">Data</node>
-    <node x="425.0" y="271.0">scrapeWikiData</node>
-    <node x="213.0" y="271.0">scrapeLinkData</node>
-    <node x="0.0" y="504.0">saveExcel</node>
-    <node x="0.0" y="271.0">CompareTwoExcel</node>
+    <node x="286.48333333333335" y="474.0">App</node>
+    <node x="34.866666666666674" y="0.0">DataSnd</node>
+    <node x="298.3666666666667" y="375.0">saveToExcel</node>
+    <node x="-176.88333333333333" y="107.0">AppSnd</node>
+    <node x="249.86666666666667" y="276.0">scrapeWikiData</node>
+    <node x="0.0" y="276.0">scrapeLinkData</node>
+    <node x="269.23333333333335" y="0.0">Data</node>
+    <node x="63.5" y="375.0">saveExcel</node>
+    <node x="484.23333333333335" y="0.0">CompareTwoExcel</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Group" zoom="1.0" x="-42.5" y="-182.5" />
+  <edges>
+    <edge source="AppSnd" target="saveExcel">
+      <point x="35.5" y="-24.5" />
+      <point x="158.61666666666667" y="449.0" />
+      <point x="157.25" y="449.0" />
+      <point x="31.25" y="24.5" />
+    </edge>
+    <edge source="saveExcel" target="DataSnd">
+      <point x="41.66666666666666" y="-24.5" />
+      <point x="167.66666666666666" y="350.0" />
+      <point x="178.5" y="350.0" />
+      <point x="178.5" y="251.0" />
+      <point x="176.5333333333333" y="251.0" />
+      <point x="56.66666666666664" y="113.0" />
+    </edge>
+    <edge source="App" target="saveToExcel">
+      <point x="35.5" y="-24.5" />
+      <point x="31.25" y="24.5" />
+    </edge>
+    <edge source="saveToExcel" target="Data">
+      <point x="41.666666666666686" y="-24.5" />
+      <point x="402.53333333333336" y="350.0" />
+      <point x="408.3666666666667" y="350.0" />
+      <point x="408.3666666666667" y="251.0" />
+      <point x="410.9" y="251.0" />
+      <point x="56.66666666666663" y="113.0" />
+    </edge>
+    <edge source="scrapeLinkData" target="DataSnd">
+      <point x="42.0" y="-24.5" />
+      <point x="126.0" y="251.0" />
+      <point x="119.86666666666667" y="251.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="saveExcel" target="scrapeLinkData">
+      <point x="0.0" y="-24.5" />
+      <point x="42.0" y="24.5" />
+    </edge>
+    <edge source="scrapeWikiData" target="Data">
+      <point x="37.0" y="-24.5" />
+      <point x="360.8666666666667" y="251.0" />
+      <point x="354.23333333333335" y="251.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="saveToExcel" target="scrapeWikiData">
+      <point x="0.0" y="-24.5" />
+      <point x="37.0" y="24.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="284.5" y="276.5" />
   <SelectedNodes>
-    <node>DataSnd</node>
+    <node>AppSnd</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>

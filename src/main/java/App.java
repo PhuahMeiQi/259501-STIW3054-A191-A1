@@ -1,6 +1,6 @@
 public class App
 {
-    public static void main(String[] args) {
+    public void app() {
         try{
             saveToExcel save = new saveToExcel();
             //saveExcel save1 = new saveExcel();
