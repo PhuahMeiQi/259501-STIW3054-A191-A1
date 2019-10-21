@@ -8,6 +8,7 @@ public class DataSnd {
         super();
     }
 
+    //
     public DataSnd(String column1, String column2, String column3) {
         super();
         this.column1 = column1;
