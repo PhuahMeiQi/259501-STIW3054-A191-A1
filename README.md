@@ -22,11 +22,11 @@ This assignment are using JSOUP to scrape the data from  Github Issue page and G
 ![image](https://user-images.githubusercontent.com/55037983/66923638-c50a7d80-f05b-11e9-8a04-1748218a2e77.png)
 
 **UML Class Diagram**
-![UML Diagram](https://user-images.githubusercontent.com/55037983/67138678-9bc73880-f279-11e9-9103-5a078268c91d.PNG)
+![uml diagram assignment1](https://user-images.githubusercontent.com/55037983/67179138-fd1d1200-f407-11e9-9253-86ab38efe0b4.PNG)
 
 YouTube Presentation
 
-https://youtu.be/xVIymo1Ap0A
+https://youtu.be/7quyRstXPTc
 
 
 References
