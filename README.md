@@ -5,7 +5,7 @@ PHUAH MEI QI 259501
 
 **Introduction**
 
-This assignment are using JSOUP to scrape the data from  Github Issue page and Github Wiki page and also using the POI to save the data to Excel. After that, the two Excel file will be used to compared the data, and list all students who have submitted the GitHub account and list all students who have submitted the GitHub account.
+This assignment are using JSOUP to scrape the data from  GitHub Issue page and GitHub Wiki page and also using the POI to save the data to Excel. After that, the two Excel file will be used to compared the data, and list all students who have submitted the GitHub account and list all students who have submitted the GitHub account.
 
 **Screenshot of result/output**
  
@@ -26,7 +26,7 @@ This assignment are using JSOUP to scrape the data from  Github Issue page and G
 
 YouTube Presentation
 
-https://youtu.be/7quyRstXPTc
+https://youtu.be/LGrJJSo6vN4
 
 
 References
